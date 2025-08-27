@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SearchInputComponent } from "../../search-input/search-input.component";
 
 interface ManuOptions{
   route: string
@@ -7,7 +8,7 @@ interface ManuOptions{
 
 @Component({
   selector: 'app-main-menu',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, SearchInputComponent],
   templateUrl: './main-menu.component.html',
 })
 export class MainMenuComponent { 
