@@ -1,0 +1,17 @@
+/** Menu */
+::ng-deep .p-menubar {
+  border: none;
+  width: 100%;          /* que abarque todo */
+}
+
+::ng-deep .p-menubar-root-list {
+  justify-content: center; /* centrar items */
+  flex: 1;                 /* ocupar el espacio */
+}
+
+::ng-deep .p-menubar .p-menuitem-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
