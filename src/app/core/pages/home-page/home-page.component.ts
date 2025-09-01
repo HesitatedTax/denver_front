@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CarouselComponent } from "./carousel/carousel.component";
+import { Component } from '@angular/core';
 import { CarouselNewsComponent } from "./carousel-news/carousel-news.component";
+import { BootsModelComponent } from "./boots-model/boots-model.component";
 
 @Component({
   selector: 'app-home-page',
-  imports: [CarouselNewsComponent],
+  imports: [CarouselNewsComponent, BootsModelComponent],
   templateUrl: './home-page.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent { }
