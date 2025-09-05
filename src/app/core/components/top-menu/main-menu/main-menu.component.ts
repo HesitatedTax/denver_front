@@ -29,6 +29,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Clothes',
             icon: 'pi pi-plus',
+            routerLink: '/mens',
             command: () => {
               this.messageService.add({ severity: 'success', summary: 'Success', detail: 'File created', life: 3000 });
             }
@@ -36,6 +37,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Boots',
             icon: 'pi pi-print',
+            routerLink: '/mens',
             command: () => {
               this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No printer connected', life: 3000 });
             }
@@ -50,6 +52,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Clothes',
             icon: 'pi pi-cloud-download',
+            routerLink: '/womans',
             command: () => {
               this.messageService.add({ severity: 'info', summary: 'Downloads', detail: 'Downloaded from cloud', life: 3000 });
             }
@@ -57,6 +60,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Boots',
             icon: 'pi pi-cloud-upload',
+            routerLink: '/womans',
             command: () => {
               this.messageService.add({ severity: 'info', summary: 'Shared', detail: 'Exported to cloud', life: 3000 });
             }
@@ -71,6 +75,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Mans',
             icon: 'pi pi-plus',
+            routerLink: '/accessories',
             command: () => {
               this.messageService.add({ severity: 'success', summary: 'Success', detail: 'File created', life: 3000 });
             }
@@ -78,6 +83,7 @@ export class MainMenuComponent implements OnInit {
           {
             label: 'Womans',
             icon: 'pi pi-print',
+            routerLink: '/accessories',
             command: () => {
               this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No printer connected', life: 3000 });
             }

@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 @Component({
   selector: 'boots-model',
@@ -26,20 +27,26 @@ export class BootsModelComponent implements AfterViewInit {
 
     this.container.nativeElement.appendChild(renderer.domElement);
 
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040, 2)); //luz suave
 
+    // -- Cargar modelo GLTF --
+    const loader = new GLTFLoader();
+    loader.load(
+    'assets/cowboy_boots/scene.gltf',
+    (gltf) => {
+      const model = gltf.scene;
+      model.scale.set(2, 2, 2);
+      model.position.set(0, -1, 0);
+      scene.add(model);
+    },
+      undefined, 
+      (error) => {
+        console.error('Error cargando modelo', error);
+      }
+    );
     camera.position.z = 5;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-
-    animate();
   }
 }

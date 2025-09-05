@@ -1,0 +1,8 @@
+Model Information:
+* title:	cowboy boot
+* source:	https://sketchfab.com/3d-models/cowboy-boot-669b58027b924906b478eb5ad5f21825
+* author:	Avery Robin (https://sketchfab.com/averyrobincoleman)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
