@@ -1,0 +1,51 @@
+<!-- filter-layer.component.html -->
+<div class="border-b border-gray-200 py-6">
+  <div *ngFor="let section of filters" class="border-t border-gray-200 px-4 py-6">
+    <h3 class="-mx-2 -my-3 flow-root">
+      <button
+        type="button"
+        (click)="toggle(section)"
+        class="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500"
+      >
+        <span class="font-medium text-gray-900">{{ section.name }}</span>
+        <span class="ml-6 flex items-center">
+          <svg
+            *ngIf="!section.open"
+            class="h-5 w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          <svg
+            *ngIf="section.open"
+            class="h-5 w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+          </svg>
+        </span>
+      </button>
+    </h3>
+
+    <div *ngIf="section.open" class="pt-6">
+      <div class="space-y-4">
+        <div *ngFor="let option of section.options" class="flex items-center">
+          <input
+            id="{{section.id}}-{{option.value}}"
+            type="checkbox"
+            [(ngModel)]="option.checked"
+            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          />
+          <label
+            for="{{section.id}}-{{option.value}}"
+            class="ml-3 text-sm text-gray-600"
+          >
+            {{ option.label }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

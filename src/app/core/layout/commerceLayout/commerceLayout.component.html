@@ -1,5 +1,15 @@
-<!--ml-[100] px-4-->
-            <router-outlet/>
+<main class="flex min-h-screen">
+  <!-- Sidebar solo si NO estás en '/' -->
+  <aside *ngIf="router.url !== '/'" class="w-64 border-r border-gray-200 p-4 bg-white">
+    <app-filter-layer></app-filter-layer>
+  </aside>
 
-<h3>Footer del commerce</h3>
+  <!-- Contenido dinámico -->
+  <section class="flex-1 p-6 bg-gray-50">
+    <router-outlet></router-outlet>
+  </section>
+</main>
 
+<footer class="p-4 bg-neutral text-neutral-content">
+  <h3>Footer del commerce</h3>
+</footer>

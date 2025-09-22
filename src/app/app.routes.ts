@@ -7,37 +7,38 @@ import { WomanPageComponent } from './core/pages/woman-page/woman-page.component
 import { ContactPageComponent } from './core/pages/contact-page/contact-page.component';
 
 export const commerceRoutes: Routes = [
-
-    {
-        path: '',
-        component: CommerceLayoutComponent,
-        children: [
-            {
-                path: 'home',
-                component: HomePageComponent
-            },
-            {
-                path: 'accessories',
-                component: AccesoriesPageComponent
-            },
-            {
-                path: 'mens',
-                component: MenPageComponent
-            },
-            {
-                path: 'womans',
-                component: WomanPageComponent
-            },
-            {
-                path:'contact',
-                component: ContactPageComponent
-            },
-            {
-                path: '**',
-                redirectTo: 'home',
-            },
-        ]
-    },
+  // Home sin sidebar
+  {
+    path: 'home',
+    component: HomePageComponent,
+  },
+  // Layout con sidebar para el resto
+  {
+    path: '',
+    component: CommerceLayoutComponent,
+    children: [
+      {
+        path: 'accessories',
+        component: AccesoriesPageComponent,
+      },
+      {
+        path: 'mens',
+        component: MenPageComponent,
+      },
+      {
+        path: 'womans',
+        component: WomanPageComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactPageComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'home',
+      },
+    ],
+  },
 ];
 
 export default commerceRoutes;

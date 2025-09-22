@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { FilterLayerComponent } from "../../../../shared/filter-layer/filter-layer.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-commerce-layout',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, FilterLayerComponent],
   templateUrl: './commerceLayout.component.html',
 })
-export class CommerceLayoutComponent { }
+export class CommerceLayoutComponent {
+  constructor(public router: Router) {}
+}
