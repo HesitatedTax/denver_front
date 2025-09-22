@@ -10,5 +10,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './commerceLayout.component.html',
 })
 export class CommerceLayoutComponent {
+  //Sirve para detectar en que ruta estas
   constructor(public router: Router) {}
 }

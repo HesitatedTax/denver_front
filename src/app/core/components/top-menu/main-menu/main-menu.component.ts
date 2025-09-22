@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { ToastModule } from 'primeng/toast';
+import { ThemeControllerComponent } from "../../theme-controller/theme-controller.component";
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [CommonModule, MenubarModule, ToastModule, RouterModule],
+  imports: [CommonModule, MenubarModule, ToastModule, RouterModule, ThemeControllerComponent],
   templateUrl: './main-menu.component.html',
   providers: [MessageService]
 })
